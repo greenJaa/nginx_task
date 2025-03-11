@@ -1,7 +1,7 @@
 #########################################
 # Developed by: Oleg Ischouk
 # Purpose: Nginx Virtual Host Setup Script
-# Date: 28/02/2025
+# Date: 28/02/2025v
 # Version: 1.0.0
 set -o errexit
 #set -o pipefail
@@ -49,6 +49,9 @@ echo "Configuring virtual host for $HOST_NAME"
 sudo mkdir -p "/var/www/$HOST_NAME"
 
 # Create the server block config file
+
+CONTENT= $( cat virtual_host_settings.tmpl )
+
 sudo tee /etc/nginx/sites-available/$HOST_NAME > /dev/null <<EOF
 server {
     listen 80;
