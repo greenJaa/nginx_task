@@ -1,3 +1,4 @@
+#!/bin/bash
 #########################################
 # Developed by: Oleg Ischouk
 # Purpose: Nginx Virtual Host Setup Script
