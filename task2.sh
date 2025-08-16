@@ -50,21 +50,23 @@ echo "Configuring virtual host for $HOST_NAME"
 sudo mkdir -p "/var/www/$HOST_NAME"
 
 # Create the server block config file
-sudo tee /etc/nginx/sites-available/$HOST_NAME > /dev/null <<EOF
-server {
-    listen 80;
-    listen [::]:80;
-    server_name $HOST_NAME;
-    root /var/www/$HOST_NAME;
-    index index.html index.htm index.nginx-debian.html;
+sudo tee /etc/nginx/sites-available/$HOST_NAME > /dev/null < virtual_host_settings.tmpl
 
-    location / {
-        # First attempt to serve request as file, then
-        # as directory, then fall back to displaying a 404.
-        try_files \$uri \$uri/ =404;
-    }
-}
-EOF
+#sudo tee /etc/nginx/sites-available/$HOST_NAME > /dev/null <<EOF
+#server {
+#    listen 80;
+#    listen [::]:80;
+#    server_name $HOST_NAME;
+#    root /var/www/$HOST_NAME;
+#    index index.html index.htm index.nginx-debian.html;
+#
+#   location / {
+#       # First attempt to serve request as file, then
+#       # as directory, then fall back to displaying a 404.
+#        try_files \$uri \$uri/ =404;
+#    }
+#}
+#EOF
 
 # Create a symlink to enable the site
 if [ ! -L /etc/nginx/sites-enabled/$HOST_NAME ]; then
