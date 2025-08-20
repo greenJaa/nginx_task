@@ -77,7 +77,9 @@ fi
 sudo chown -R www-data:www-data "/var/www/$HOST_NAME"
 
 # Ensure Nginx configuration is valid before restarting
-sudo nginx -t && sudo systemctl restart nginx
+#sudo nginx -t && sudo systemctl restart nginx
+sudo nginx -s reload || sudo nginx
+
 
 # Add entry to /etc/hosts (for local testing)
 echo "127.0.0.1 $HOST_NAME" | sudo tee -a /etc/hosts
