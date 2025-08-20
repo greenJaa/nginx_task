@@ -50,7 +50,8 @@ echo "Configuring virtual host for $HOST_NAME"
 sudo mkdir -p "/var/www/$HOST_NAME"
 
 # Create the server block config file
-sudo tee /etc/nginx/sites-available/$HOST_NAME > /dev/null < virtual_host_settings.tmpl
+#sudo tee /etc/nginx/sites-available/$HOST_NAME > /dev/null < virtual_host_settings.tmpl
+envsubst < virtual_host_settings.tmpl | sudo tee /etc/nginx/sites-available/$HOST_NAME
 
 #sudo tee /etc/nginx/sites-available/$HOST_NAME > /dev/null <<EOF
 #server {
