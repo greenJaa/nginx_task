@@ -45,6 +45,7 @@ fi
 echo "Please enter host name:"
 read -r HOST_NAME
 echo "Configuring virtual host for $HOST_NAME"
+export HOST_NAME
 
 # Create the website directory
 sudo mkdir -p "/var/www/$HOST_NAME"
