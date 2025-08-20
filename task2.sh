@@ -37,7 +37,7 @@ else
         echo "nginx virtual host is not configured."
     else
         echo "nginx virtual host is already configured."
-        exit 0
+        #exit 0
     fi
 fi
 
@@ -51,7 +51,8 @@ sudo mkdir -p "/var/www/$HOST_NAME"
 
 # Create the server block config file
 #sudo tee /etc/nginx/sites-available/$HOST_NAME > /dev/null < virtual_host_settings.tmpl
-envsubst < virtual_host_settings.tmpl | sudo tee /etc/nginx/sites-available/$HOST_NAME
+#envsubst < virtual_host_settings.tmpl | sudo tee /etc/nginx/sites-available/$HOST_NAME
+envsubst '${HOST_NAME}' < virtual_host_settings.tmpl | sudo tee /etc/nginx/sites-available/$HOST_NAME > /dev/null
 
 #sudo tee /etc/nginx/sites-available/$HOST_NAME > /dev/null <<EOF
 #server {
