@@ -66,5 +66,10 @@ if [[ ! $(< /etc/hosts) == *" $HOST_NAME"* ]]; then
     echo "127.0.0.1 $HOST_NAME" | sudo tee -a /etc/hosts
 fi
 
+# Copy default index.html page
+if [[ -f ./index.html ]]; then
+    sudo cp ./index.html "/var/www/$HOST_NAME/index.html"
+fi
+
 # Test if the virtual host is working
 curl -I http://$HOST_NAME
