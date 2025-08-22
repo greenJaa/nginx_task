@@ -11,7 +11,7 @@ This script automates the process of setting up a new virtual host on an Nginx s
 
 ## Usage:
 
-1. Clone the repository or download the script.
+1. Clone the repository.
 2. Run the script with `sudo`:
    ```bash
    sudo ./setup_nginx.sh
