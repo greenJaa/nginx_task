@@ -1,8 +1,8 @@
 server {
-    listen $PORT;
-    listen [::]:$PORT;
-    server_name $HOST_NAME;
-    root /var/www/$HOST_NAME;
+    listen ${PORT};
+    listen [::]:${PORT};
+    server_name ${HOST_NAME};
+    root /var/www/${HOST_NAME};
     index index.html index.htm;
     location / {
         try_files $uri $uri/ =404;
