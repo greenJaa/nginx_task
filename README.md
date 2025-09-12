@@ -14,4 +14,4 @@ This script automates the process of setting up a new virtual host on an Nginx s
 1. Clone the repository.
 2. Run the script with `sudo`:
    ```bash
-   sudo ./task2.sh
+   sudo bash task2.sh
