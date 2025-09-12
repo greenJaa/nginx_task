@@ -51,7 +51,7 @@ export PORT
 sudo mkdir -p "/var/www/$HOST_NAME"
 
 # Generate the nginx config from template
-envsubst '${HOST_NAME}${PORT}' < virtual_host_settings.tmpl | sudo tee /etc/nginx/sites-available/$HOST_NAME > /dev/null
+envsubst '${HOST_NAME} ${PORT}' < virtual_host_settings.tmpl | sudo tee /etc/nginx/sites-available/$HOST_NAME > /dev/null
 
 # Create a symlink to enable the site if it doesn't exist
 if [[ ! -L /etc/nginx/sites-enabled/$HOST_NAME ]]; then
