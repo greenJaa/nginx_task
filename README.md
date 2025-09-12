@@ -1,6 +1,6 @@
 # Nginx Virtual Host Setup Script
 
-This script automates the process of setting up a new virtual host on an Nginx server.
+This script automates the process of setting up a new virtual host on an Nginx server on port 8080
 
 ## Features:
 - Installs Nginx if not already installed.
