@@ -1,6 +1,6 @@
 server {
-    listen 8080;
-    listen [::]:8080;
+    listen $PORT;
+    listen [::]:$PORT;
     server_name $HOST_NAME;
     root /var/www/$HOST_NAME;
     index index.html index.htm;
