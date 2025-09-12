@@ -45,6 +45,8 @@ echo "Configuring virtual host for $HOST_NAME"
 export HOST_NAME
 #PORT=${PORT:-8080}
 PORT=8080
+
+export PORT
 # Create the website directory
 sudo mkdir -p "/var/www/$HOST_NAME"
 
