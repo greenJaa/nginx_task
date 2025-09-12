@@ -43,7 +43,8 @@ echo "Please enter host name:"
 read -r HOST_NAME
 echo "Configuring virtual host for $HOST_NAME"
 export HOST_NAME
-
+#PORT=${PORT:-8080}
+PORT=8080
 # Create the website directory
 sudo mkdir -p "/var/www/$HOST_NAME"
 
@@ -72,4 +73,4 @@ if [[ -f ./index.html ]]; then
 fi
 
 # Test if the virtual host is working
-curl -I http://$HOST_NAME
+curl -I http://$HOST_NAME$PORT
