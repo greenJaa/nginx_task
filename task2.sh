@@ -73,4 +73,4 @@ if [[ -f ./index.html ]]; then
 fi
 
 # Test if the virtual host is working
-curl -I http://$HOST_NAME$PORT
+curl -I http://$HOST_NAME:$PORT
